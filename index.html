@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Lotto</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<header class="header" id="header">
+			<img src="./img/Lotto.png" alt="logo lotto" class="header__logo" />
+			<p class="header__text">Gra losowa Lotto</p>
+		</header>
+		<main class="main" id="main">
+			<h1>Zagraj w lotto!</h1>
+			<p>Wpisz 6 cyfr, a następnie naciśnij przycisk Losuj!</p>
+			<div class="game">
+				<div class="main__row">
+					<p class="main__row-text">Podaj pierwszą liczbę:</p>
+					<input type="number" class="main__row-numInput firstNumber" />
+				</div>
+				<div class="main__row">
+					<p class="main__row-text">Podaj drugą liczbę:</p>
+					<input type="number" class="main__row-numInput secondNumber" />
+				</div>
+				<div class="main__row">
+					<p class="main__row-text">Podaj trzecią liczbę:</p>
+					<input type="number" class="main__row-numInput thirdNumber" />
+				</div>
+				<div class="main__row">
+					<p class="main__row-text">Podaj czwartą liczbę:</p>
+					<input type="number" class="main__row-numInput fourthNumber" />
+				</div>
+				<div class="main__row">
+					<p class="main__row-text">Podaj piątą liczbę:</p>
+					<input type="number" class="main__row-numInput fifthNumber" />
+				</div>
+				<div class="main__row">
+					<p class="main__row-text">Podaj szóstą liczbę:</p>
+					<input type="number" class="main__row-numInput sixthNumber" />
+				</div>
+				<button type="submit" class="main__row-submit submitBtn">
+					Wylosuj!
+				</button>
+			</div>
+			<div class="score">
+				<p>Twoje liczby to:</p>
+				<p>Wylosowane liczby to:</p>
+				<p>Trafiłeś nr:</p>
+			</div>
+		</main>
+		<script src="./js/script.js"></script>
+	</body>
+</html>
