@@ -8,17 +8,6 @@ const matchNumbersField = document.querySelector(".matchNumbersField");
 
 const submitBtn = document.querySelector(".submitBtn");
 
-const randomNumbersGenerator = () => {
-	for (let i = 0; i < 6; i++) {
-		let randNumber = Math.floor(Math.random() * (49 - 1 + 1)) + 1;
-		randNumbers.push(randNumber);
-	}
-	let randNumbersString = "";
-	for (let i = 0; i < randNumbers.length; i++) {
-		randNumbersString += randNumbers[i] + ", ";
-	}
-	randNumbersField.textContent = randNumbersString;
-};
 const submitUserNumbers = () => {
 	const userFirstNumber = parseFloat(
 		document.querySelector(".firstNumber").value
@@ -51,8 +40,21 @@ const submitUserNumbers = () => {
 	for (let i = 0; i < userNumbers.length; i++) {
 		userNumbersString += userNumbers[i] + ", ";
 	}
-	userNumbersField.textContent = userNumbersString;
+	userNumbersField.textContent = `Twoje liczby to: ${userNumbersString}`;
 };
+
+const randomNumbersGenerator = () => {
+	for (let i = 0; i < 6; i++) {
+		let randNumber = Math.floor(Math.random() * (49 - 1 + 1)) + 1;
+		randNumbers.push(randNumber);
+	}
+	let randNumbersString = "";
+	for (let i = 0; i < randNumbers.length; i++) {
+		randNumbersString += randNumbers[i] + ", ";
+	}
+	randNumbersField.textContent = `Wylosowane liczby to: ${randNumbersString}`;
+};
+
 const matchNumberCheck = () => {
 	for (let i = 0; i < userNumbers.length; i++) {
 		for (let j = 0; j < randNumbers.length; j++) {
@@ -67,7 +69,7 @@ const matchNumberCheck = () => {
 	for (let i = 0; i < matchNumbers.length; i++) {
 		matchNumbersString += matchNumbers[i] + ", ";
 	}
-	matchNumbersField.textContent = matchNumbersString;
+	matchNumbersField.textContent = `Trafiłeś nr: ${matchNumbersString}`;
 };
 const functionsHandler = () => {
 	userNumbers = [];
@@ -77,4 +79,8 @@ const functionsHandler = () => {
 	submitUserNumbers();
 	matchNumberCheck();
 };
+
+document.getElementById("curtainBtn").addEventListener("click", function () {
+	document.querySelector(".curtain").classList.add("open");
+});
 submitBtn.addEventListener("click", functionsHandler);
