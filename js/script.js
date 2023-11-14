@@ -10,6 +10,7 @@ const matchNumbersField = document.querySelector(".matchNumbersField");
 const submitBtn = document.querySelector(".submitBtn");
 
 const submitUserNumbers = () => {
+	userNumbers = [];
 	const userFirstNumber = parseFloat(
 		document.querySelector(".firstNumber").value
 	);
@@ -72,15 +73,15 @@ const submitUserNumbers = () => {
 		return;
 	} else userNumbers.push(userSixthNumber);
 
-	// for (let i = 0; i < userNumbers.length; i++) {
-	// 	for (let j = i + 1; j < userNumbers.length; j++) {
-	// 		if (userNumbers[i] === userNumbers[j]) {
-	// 			alert("Proszę podać różne liczby. Powtórzenia nie są dozwolone.");
-	// 			validHandler = true;
-	// 			return;
-	// 		}
-	// 	}
-	// }
+	for (let i = 0; i < userNumbers.length; i++) {
+		for (let j = i + 1; j < userNumbers.length; j++) {
+			if (userNumbers[i] === userNumbers[j]) {
+				alert("Proszę podać różne liczby. Powtórzenia nie są dozwolone.");
+				validHandler = true;
+				return;
+			}
+		}
+	}
 	let userNumbersString = "";
 	for (let i = 0; i < userNumbers.length; i++) {
 		userNumbersString += userNumbers[i] + ", ";
